@@ -1,6 +1,8 @@
 import type { AppProps } from 'next/app'
 import { Roboto } from '@next/font/google'
 import { globalStyles } from '@/styles/global'
+import logoImg from '../assets/Logo.svg'
+import { Container, Header } from '@/styles/pages/app'
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -11,9 +13,12 @@ const roboto = Roboto({
 globalStyles()
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-    <style jsx global>{`html { font-family: ${roboto.style.fontFamily} }`}</style>
+    <Container>
+      <style jsx global>{`html { font-family: ${roboto.style.fontFamily} }`}</style>
+      <Header>
+        <img src={logoImg.src} alt />
+      </Header>
       <Component {...pageProps} />
-    </>
+    </Container>
   ) 
 }
