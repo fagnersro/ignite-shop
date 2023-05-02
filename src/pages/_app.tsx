@@ -5,6 +5,7 @@ import logoImg from '../assets/Logo.svg'
 import { Container, Header } from '@/styles/pages/app'
 import Image from 'next/image'
 import Cart from '@/components/Cart'
+import Link from 'next/link'
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -18,7 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Container>
         <style jsx global>{`html { font-family: ${roboto.style.fontFamily} }`}</style>
         <Header>
-          <Image src={logoImg} alt='' />
+          <Link href={`/`}  prefetch={false}>
+            <Image src={logoImg} alt='' />
+          </Link>
           <Cart />
         </Header>
         <Component {...pageProps} />

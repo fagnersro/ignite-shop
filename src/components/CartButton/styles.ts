@@ -1,6 +1,6 @@
 import { styled } from "@/styles";
 
-export const ShopCartButton = styled('button', {
+export const ShopCartButton = styled('div', {
   all: 'unset',
   cursor: 'pointer',
 
@@ -26,7 +26,7 @@ export const ShopCartButton = styled('button', {
     position: 'absolute',
     width: '1.7rem',
     height: '1.7rem',
-    right: '75px',
+    right: '85px',
     top: '24px',
 
     span: {

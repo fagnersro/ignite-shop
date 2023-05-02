@@ -2,6 +2,7 @@ import { styled } from "..";
 import * as Dialog from '@radix-ui/react-dialog'
 
 export const ContainerCart = styled(Dialog.Content, {
+  // border: '1px solid red',
   position: 'fixed',
   top: 0,
   right: 0,
@@ -9,7 +10,7 @@ export const ContainerCart = styled(Dialog.Content, {
   width: '35%',
   backgroundColor: '$gray800',
   padding: '3rem',
-  paddingTop: '4.5rem',
+  // paddingTop: '4.5rem',
   boxShadow: '-4px 8px 30px rgba(0, 0, 0, 0.8)',
   display: 'flex',
   flexDirection: 'column',
@@ -17,12 +18,13 @@ export const ContainerCart = styled(Dialog.Content, {
   h2: {
     color: '$gray100',
 
-    marginBottom: '2rem',
+    // marginBottom: '2rem',
     fontStyle: 'normal',
     fontWeight: 700,
     fontSize: '20px',
     lineHeight: '160%',
-  }
+  },
+
 }) 
 
 export const ClosedCart = styled(Dialog.Close, {
@@ -43,6 +45,17 @@ export const ClosedCart = styled(Dialog.Close, {
   cursor: 'pointer',
 })
 
+export const WrapperContainerCart = styled('div', {
+  // border: '1px solid pink',
+
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+
+  height: '100%',
+  width: '100%',
+})
+
 export const ContentProduct = styled('section', {
   border: '1px solid red',
  
@@ -50,14 +63,62 @@ export const ContentProduct = styled('section', {
   alignItems: 'center',
   justifyContent: 'center',
 
-  height: '20.625rem',
-  width: '24rem',
+  height: '15.625rem',
+  width: '100%',
 })
 
 export const ContentDetailsCart = styled('div', {
-  border: '1px solid red',
+  // border: '1px solid red',
 
-  marginTop: '12.375rem',
-  height: '3.875rem',
-  width: '24rem',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+
+  // marginTop: '1.575rem',
+  height: '4.875rem',
+  width: '100%',
+
+  div: {
+    // border: '1px solid red',
+
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
+    height: '2.625rem',
+
+    span: {
+      color: '$gray100',
+      fontStyle: 'normal',
+      fontWeight: 400,
+      fontSize: '16px',
+    },
+
+    'span:nth-child(2)': {
+      color: '$gray300',
+      fontStyle: 'normal',
+      fontWeight: 400,
+      fontSize: '18px',
+    }
+  }
+})
+
+export const ButtonFinalizar = styled('button', {
+    all: 'unset',
+    backgroundColor: '$green500',
+    borderRadius: '6px',
+    cursor: 'pointer',
+
+    textAlign: 'center',
+    fontWeight: 'bold',
+
+    // marginTop: '5rem',
+    height: '4.313rem',
+    width: '100%',
+
+    transition: 'all 0.2s',
+
+    '&:hover': {
+      backgroundColor: '$green300',
+    }
 })
