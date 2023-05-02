@@ -30,7 +30,7 @@ export const Product = styled('div', {
     bottom: '0.25rem',
     left: '0.25rem',
     right: '0.25rem',
-    padding: '2rem',
+    padding: '1rem',
 
     borderRadius: 6,
 
@@ -43,6 +43,11 @@ export const Product = styled('div', {
     transform: 'translateY(110%)',
     opacity: 0,
     transition: 'all 0.2s ease-in-out',
+
+    div: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
 
     strong: {
       fontSize: '$lg',
@@ -64,3 +69,25 @@ export const Product = styled('div', {
       } 
   }
 });
+
+export const ButtonCart = styled('button', {
+  all: 'unset',
+  backgroundColor: '$green500',
+  borderRadius: '6px',
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  
+  lineHeight: 0,
+  height: '3.5rem',
+  width: '3.5rem',
+
+  svg: {
+
+    color: '$white',
+
+    height: '2rem',
+    width: '2rem'
+  }
+})
