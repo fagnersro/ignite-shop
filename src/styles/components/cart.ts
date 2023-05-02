@@ -2,7 +2,7 @@ import { styled } from "..";
 import * as Dialog from '@radix-ui/react-dialog'
 
 export const ContainerCart = styled(Dialog.Content, {
-  // border: '1px solid red',
+
   position: 'fixed',
   top: 0,
   right: 0,
@@ -10,7 +10,7 @@ export const ContainerCart = styled(Dialog.Content, {
   width: '35%',
   backgroundColor: '$gray800',
   padding: '3rem',
-  // paddingTop: '4.5rem',
+
   boxShadow: '-4px 8px 30px rgba(0, 0, 0, 0.8)',
   display: 'flex',
   flexDirection: 'column',
@@ -18,7 +18,6 @@ export const ContainerCart = styled(Dialog.Content, {
   h2: {
     color: '$gray100',
 
-    // marginBottom: '2rem',
     fontStyle: 'normal',
     fontWeight: 700,
     fontSize: '20px',
@@ -29,8 +28,6 @@ export const ContainerCart = styled(Dialog.Content, {
 
 export const ClosedCart = styled(Dialog.Close, {
   all: 'unset',
-
-
   svg: {
     color: '$gray3Icon',
     fontWeight: 'bold',
@@ -46,8 +43,6 @@ export const ClosedCart = styled(Dialog.Close, {
 })
 
 export const WrapperContainerCart = styled('div', {
-  // border: '1px solid pink',
-
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
@@ -57,29 +52,81 @@ export const WrapperContainerCart = styled('div', {
 })
 
 export const ContentProduct = styled('section', {
-  border: '1px solid red',
- 
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  // alignItems: 'center',
 
   height: '15.625rem',
   width: '100%',
 })
 
-export const ContentDetailsCart = styled('div', {
-  // border: '1px solid red',
+export const CardProduct = styled('div', {
+  // border: '1px solid pink',
 
+  display: 'flex',
+  justifyContent: 'space-between',
+
+  height: '5.875rem',
+  width: '100%',
+})
+
+export const CardProductContainerImage = styled('div', {
+  borderRadius: '8px',
+  background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
+
+  height: '100%',
+  width: '6.375rem',
+})
+
+export const CardProductContentData = styled('div', {
+  // border: '1px solid gold',
+
+  display: 'flex',
+  flexDirection: 'column',
+
+  height: '100%',
+  width: '16.375rem',
+
+  span: {
+
+    color: '$gray300',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontSize: '18px',
+    height: '1.625rem',
+    marginBottom: '0.125rem',
+  },
+
+  'span:nth-child(2)': {
+    color: '$gray100',
+    fontStyle: 'normal',
+    fontWeight: 700,
+    fontSize: '18px',
+
+    marginBottom: '1.2rem',
+  },
+
+  button: {
+    all: 'unset',
+    cursor: 'pointer',
+    color: '$green300',
+
+    fontWeight: 'bold',
+    lineHeight: 0,
+
+    height: '1.625rem',
+    width: '4.063rem',
+  }
+})
+
+export const ContentDetailsCart = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
 
-  // marginTop: '1.575rem',
   height: '4.875rem',
   width: '100%',
 
   div: {
-    // border: '1px solid red',
 
     display: 'flex',
     justifyContent: 'space-between',
@@ -112,7 +159,7 @@ export const ButtonFinalizar = styled('button', {
     textAlign: 'center',
     fontWeight: 'bold',
 
-    // marginTop: '5rem',
+
     height: '4.313rem',
     width: '100%',
 

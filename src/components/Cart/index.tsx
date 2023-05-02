@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import CartButton from '../CartButton'
-import { ButtonFinalizar, ClosedCart, ContainerCart, ContentDetailsCart, ContentProduct, WrapperContainerCart } from '@/styles/components/cart'
+import { ButtonFinalizar, CardProduct, CardProductContainerImage, CardProductContentData, ClosedCart, ContainerCart, ContentDetailsCart, ContentProduct, WrapperContainerCart } from '@/styles/components/cart'
 import { X } from '@phosphor-icons/react'
 
 export default function Cart() {
@@ -19,9 +19,18 @@ export default function Cart() {
             <h2>Sacola de compras</h2>
 
             <ContentProduct>
-              <h1>My Products</h1>
+              <CardProduct>
+                <CardProductContainerImage>
+
+                </CardProductContainerImage>
+                <CardProductContentData>
+                  <span>Camiseta Beyound the Limits</span>
+                  <span>R$ 79,90</span>
+                  <button>Remover</button>
+                </CardProductContentData>
+              </CardProduct>
             </ContentProduct>
-            <ContentDetailsCart>
+            <ContentDetailsCart>  
               <div>
                 <span>Quantidade</span>
                 <span>3 itens</span>
