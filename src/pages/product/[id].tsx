@@ -2,33 +2,22 @@ import { stripe } from "@/lib/stripe"
 import { ImageContainer, ProductContainer, ProductDetails } from "@/styles/pages/product"
 import { GetStaticPaths } from "next"
 import { GetStaticProps } from "next"
-import { useRouter } from 'next/router'
+import { DataProduct } from "@/context/DataCarContext"
+
 import Image from "next/image"
 import Stripe from "stripe"
 import axios from "axios"
 import { useState } from "react"
 import Head from "next/head"
+import { useCar } from "@/hook/useCar"
 
 interface ProductProps {
-  product: {
-    id: string
-    name: string
-    imageUrl: string
-    price: string
-    description: string
-    defaultPriceId: string
-  }
+  product: DataProduct
 }
 
 export default function Product({ product }: ProductProps) {
   const [isCreatingCheckoutSession, setCreatingCheckoutSession] = useState(false)
-  
-  // const { isFallback } = useRouter()
-  
-  // if (isFallback) {
-  //   //esqueleton loading
-  //   return <p>Loading...</p>
-  // }
+  const { addProductToCar } = useCar()
 
   async function handleBuyProduct() {
     try {
@@ -101,6 +90,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({ para
         }).format(price.unit_amount as number / 100),
         description: product.description,
         defaultPriceId: price.id,
+        numberPrice: price.unit_amount / 100
       }
     },
     revalidate: 60 * 60 * 1, // 1 hour

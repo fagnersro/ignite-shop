@@ -6,6 +6,7 @@ import { Container, Header } from '@/styles/pages/app'
 import Image from 'next/image'
 import Cart from '@/components/Cart'
 import Link from 'next/link'
+import  { DataCarContextProvider } from '../context/DataCarContext'
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -16,6 +17,8 @@ const roboto = Roboto({
 globalStyles()
 export default function App({ Component, pageProps }: AppProps) {
   return (
+
+    <DataCarContextProvider>
       <Container>
         <style jsx global>{`html { font-family: ${roboto.style.fontFamily} }`}</style>
         <Header>
@@ -26,5 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </Header>
         <Component {...pageProps} />
       </Container>
+    </DataCarContextProvider>
+
   ) 
 }
