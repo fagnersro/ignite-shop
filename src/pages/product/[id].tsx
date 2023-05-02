@@ -16,24 +16,9 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
-  const [isCreatingCheckoutSession, setCreatingCheckoutSession] = useState(false)
-  const { addProductToCar } = useCar()
-
-  async function handleBuyProduct() {
-    try {
-      setCreatingCheckoutSession(true)
-      const resposnse = await axios.post('/api/checkout', {
-        priceId: product.defaultPriceId,
-      })
-
-      const { checkoutUrl } = resposnse.data
-      window.location.href = checkoutUrl
-    } catch (err) {
-      // Conectar com uma ferramenta de observabilidade(Datadog / Sentry)
-      setCreatingCheckoutSession(false)
-      alert('Falha ao redirecionar ao checkout')
-    }
-  }
+  const { addProductToCar, checkIfProductAlreadyInCart } = useCar()
+  
+  const itemInCart = checkIfProductAlreadyInCart(product.id);
 
   return (
     <>
@@ -52,8 +37,8 @@ export default function Product({ product }: ProductProps) {
 
           <p>{product.description}</p>
 
-          <button disabled={isCreatingCheckoutSession} onClick={handleBuyProduct}>
-            Colocar na sacola
+          <button disabled={itemInCart} onClick={() => addProductToCar(product)}>
+            {itemInCart ? 'O produto já está na sacola' : 'Colocar na sacola'}
           </button>
         </ProductDetails>
       </ProductContainer>

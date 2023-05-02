@@ -53,14 +53,39 @@ export const WrapperContainerCart = styled('div', {
 
 export const ContentProduct = styled('section', {
   display: 'flex',
-  // alignItems: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '1.5rem',
 
-  height: '15.625rem',
+
+  // alignItems: 'center',
+  overflowY: 'auto',
+
+  '&::-webkit-scrollbar': {
+    backgroundColor: '$gray900',
+    borderRadius: '8px',
+    width: '10px',
+  },
+
+  '&::-webkit-scrollbar-thumb': {
+    backgroundColor: '$gray800',
+    border: '2px solid $gray900',
+   
+    borderRadius: '8px',
+  },
+
+  span: {
+    color: '$gray100',
+    fontSize: '21px',
+    fontWeight: 'bold'
+  },
+
+  height: '20.625rem',
   width: '100%',
 })
 
 export const CardProduct = styled('div', {
-  // border: '1px solid pink',
+
 
   display: 'flex',
   justifyContent: 'space-between',
@@ -70,8 +95,13 @@ export const CardProduct = styled('div', {
 })
 
 export const CardProductContainerImage = styled('div', {
+
   borderRadius: '8px',
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
   height: '100%',
   width: '6.375rem',
@@ -160,12 +190,18 @@ export const ButtonFinalizar = styled('button', {
     fontWeight: 'bold',
 
 
-    height: '4.313rem',
+    height: '3.313rem',
     width: '100%',
 
     transition: 'all 0.2s',
 
-    '&:hover': {
+
+    '&:disabled': {
+      opacity: 0.6,
+      cursor: 'not-allowed',
+    },
+  
+    '&:not(:disabled):hover': {
       backgroundColor: '$green300',
     }
 })

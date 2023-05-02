@@ -23,6 +23,7 @@ interface HomeProps {
 }
 
 export default function Home({ products }: HomeProps) {
+
 const [sliderRef] = useKeenSlider({
   slides: {
     perView: 3,

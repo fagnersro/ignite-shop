@@ -1,4 +1,6 @@
+import { useCar } from "@/hook/useCar";
 import { styled } from "@/styles";
+
 
 export const ShopCartButton = styled('div', {
   all: 'unset',
@@ -33,7 +35,7 @@ export const ShopCartButton = styled('div', {
       fontStyle: 'normal',
       fontWeight: 700,
       fontSize: '14px',
-    }
+    }  
   },
 
   svg: {
