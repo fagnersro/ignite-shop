@@ -38,7 +38,7 @@ export default function Cart() {
       })
 
       const { checkoutUrl } = resposnse.data
-      window.location.href = this.checkoutUrl
+      window.location.href = checkoutUrl
     } catch (err) {
       // Conectar com uma ferramenta de observabilidade(Datadog / Sentry)
       setCreatingCheckoutSession(false)
